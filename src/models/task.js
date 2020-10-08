@@ -1,4 +1,3 @@
-import { format } from 'date-fns';
 const Task = (id, title, description, date, priotity, idProject) => {
 
   const getId = () => id;
