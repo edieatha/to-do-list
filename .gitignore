@@ -3550,3 +3550,4 @@ node_modules/.bin/errno
 node_modules/.bin/atob
 node_modules/.bin/acorn
 node_modules/.DS_Store
+.DS_Store
