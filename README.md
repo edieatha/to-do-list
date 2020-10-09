@@ -1,5 +1,5 @@
 # to-do-list
-A Javascript projecyt manager web app. You can add tasks, set priority of task, edit and set deadlines for a more productive work life inspired by any.do app.
+A Javascript project manager web app. You can add tasks, set priority of task, edit and set deadlines for a more productive work life inspired by any.do app.
 
 ## Built with
 
