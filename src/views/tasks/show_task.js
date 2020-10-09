@@ -2,18 +2,17 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import taskController from '../../controllers/task_controller';
 import projectController from '../../controllers/project_controller';
-import Task from '../../models/task';
 import editTask from './edit_task';
 import deleteTask from './delete_task';
 import viewTask from './view_task';
 import delTask from '../../events/tasks/del';
 
 const showTask = (idProject) => {
-  let tasks = taskController.findByProject(idProject);
-  let colRight = document.getElementById('colright');
-  colRight.innerHTML = "";
+  const tasks = taskController.findByProject(idProject);
+  const colRight = document.getElementById('colright');
+  colRight.innerHTML = '';
   if (tasks != null) {
-    for(let i = 0; i < tasks.length; i += 1) {
+    for (let i = 0; i < tasks.length; i += 1) {
       colRight.innerHTML += `<div class="card mt-2 mx-auto">
       <div class="card-header d-flex justify-content-center">
       Project: ${projectController.one(idProject).getP()}
@@ -33,9 +32,9 @@ const showTask = (idProject) => {
     }
   }
 
-  if( tasks != null ) {
-    let del = document.getElementsByClassName('remove-task');
-    for (let i = 0; i < del.length; i += 1){
+  if (tasks != null) {
+    const del = document.getElementsByClassName('remove-task');
+    for (let i = 0; i < del.length; i += 1) {
       del[i].addEventListener('click', delTask.bind(del[i], tasks[i].id, idProject));
     }
   }

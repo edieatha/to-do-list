@@ -1,7 +1,6 @@
-
 const reload = () => {
-    let colright = document.getElementById('colright');
-      colright.innerHTML = '';
+  const colright = document.getElementById('colright');
+  colright.innerHTML = '';
 };
 
 export default reload;

@@ -24,11 +24,9 @@ const newProject = () => {
   colright.setAttribute('id', 'colright');
   rowShow.appendChild(colright);
 
-
   const newTask = document.createElement('div');
   newTask.classList.add('row', 'mx-auto');
   newTask.setAttribute('id', 'newTask');
-
 
   const modal = document.createElement('div');
   modal.classList.add('modal', 'fade');
@@ -38,22 +36,15 @@ const newProject = () => {
   modal.setAttribute('aria-labelledby', 'exampleModalCenterTitle');
   modal.setAttribute('aria-hidden', 'true');
 
-
   const modalDialog = document.createElement('div');
   modalDialog.classList.add('modal-dialog', 'modal-dialog-centered');
   modalDialog.setAttribute('role', 'document');
 
-
-
   const modalContent = document.createElement('div');
   modalContent.classList.add('modal-content');
 
-
-
   const modalHeader = document.createElement('div');
   modalHeader.classList.add('modal-header');
-
-
 
   const header = document.createElement('h5');
   header.classList.add('modal-title');
@@ -80,7 +71,6 @@ const newProject = () => {
   form.setAttribute('id', 'add-project');
   form.setAttribute('action', '/');
   form.setAttribute('method', 'GET');
-
 
   const modalBody = document.createElement('div');
   modalBody.classList.add('modal-body');
