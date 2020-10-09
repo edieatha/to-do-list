@@ -33,9 +33,7 @@ To get a local copy up and running follow these simple example steps:
 
 6. Run `npm install` from the Terminal
 
-7. Run `npm install bootstrap` from the Terminal
-
-6. Run `npm install jquery popper.js --save` from the Terminal
+7. Run `npm i` from the Terminal
 
 8. Then `npm run build` from the terminal
 
