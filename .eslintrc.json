@@ -13,9 +13,10 @@
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "import/no-cycle": "off"
   },
-  "ignorePatterns": [
+   "ignorePatterns": [ 
     "dist/",
     "build/"
   ]
