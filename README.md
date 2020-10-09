@@ -40,7 +40,7 @@ To get a local copy up and running follow these simple example steps:
 9. Sixth, Open dist/index.html page with browser
 
 
-## See a live demo [Here](https://elated-elion-3f5cef.netlify.app)
+## See a live demo [Here](https://raw.githack.com/edieatha/to-do-list/to-do-list-feature/dist/index.html)
 
 ## Show your support
 Give a ⭐️ if you like this project!
