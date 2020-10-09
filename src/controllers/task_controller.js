@@ -1,53 +1,51 @@
 import Task from '../models/task';
 
+const all = () => {
+  const stringTask = localStorage.getItem('task');
+  return JSON.parse(stringTask);
+};
 
+const isEmpty = () => (all() == null);
 
 const taskController = (() => {
-
   const create = (...arg) => {
-    let id = new Date().getTime() + 1;
+    const id = new Date().getTime() + 1;
     let arr = [];
     const task = Task(id, ...arg);
-    if(!isEmpty()) {
+    if (!isEmpty()) {
       arr = [...all()];
     }
     arr.push(task.getTask());
     localStorage.setItem('task', JSON.stringify(arr));
-  }
-
-  const all = () => {
-    let stringTask = localStorage.getItem('task');
-    return JSON.parse(stringTask);
-  }
+  };
 
   const findByProject = (idProject) => {
     let arr = [];
     let arrTasks = [];
-    if(!isEmpty()) {
+    if (!isEmpty()) {
       arr = [...all()];
-      arrTasks = arr.filter((value, index, arr) => {
-         return value.idProject == idProject;
-       });
+      arrTasks = arr.filter((value) => value.idProject === idProject);
     }
     return arrTasks;
-
-  }
+  };
 
   const one = (id) => {
     let task;
-    for(let i = 0; i < all().length; i += 1) {
-      if(all()[i].id == id){
-        task = Task(all()[i].id, all()[i].title, all()[i].description, all()[i].date, all()[i].priotity, all()[i].idProject);
+    for (let i = 0; i < all().length; i += 1) {
+      if (all()[i].id === id) {
+        const tasks1 = (all()[i].id, all()[i].title, all()[i].description);
+        const tasks2 = (all()[i].date, all()[i].priotity, all()[i].idProject);
+        task = Task(tasks1, tasks2);
       }
     }
 
     return task;
-  }
+  };
 
   const upDate = (task) => {
-    let arr = [...all()];
-    for(let i = 0; i < arr.length; i += 1) {
-      if(arr[i].id == task.getId()){
+    const arr = [...all()];
+    for (let i = 0; i < arr.length; i += 1) {
+      if (arr[i].id === task.getId()) {
         arr[i].title = task.getTitle();
         arr[i].description = task.getDescription();
         arr[i].date = task.getDate();
@@ -56,21 +54,17 @@ const taskController = (() => {
       }
     }
     localStorage.setItem('task', JSON.stringify(arr));
-  }
+  };
 
   const del = (id) => {
-    let arr = [...all()];
-    for(let i = 0; i < arr.length; i += 1) {
-      if(arr[i].id == id){
+    const arr = [...all()];
+    for (let i = 0; i < arr.length; i += 1) {
+      if (arr[i].id === id) {
         arr.splice(i, 1);
       }
     }
     localStorage.setItem('task', JSON.stringify(arr));
-  }
-
-  const isEmpty = () => {
-    return all() != null ? false : true;
-  }
+  };
 
   return {
     create,
@@ -78,7 +72,7 @@ const taskController = (() => {
     one,
     findByProject,
     del,
-    upDate
+    upDate,
   };
 })();
 
